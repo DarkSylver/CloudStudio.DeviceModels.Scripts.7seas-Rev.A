@@ -31,7 +31,7 @@ function parseUplink(device, payload) {
     env.log (lat);
     var lon = convertToDecimal(parts[5], parts[6]);
     env.log (lon);
-    var velocidad = parseFloat(parts[7]) * 1.852; // nudos a km/h
+    var velocidad = parseFloat(parts[7]); // se quito la conversión
     var rumbo = parseFloat(parts[8]);
     var variacion = parseFloat(parts[10]);
     if (parts[11] === 'W') variacion *= -1;
@@ -54,7 +54,7 @@ function parseUplink(device, payload) {
         }
     }
 
-    // Velocidad
+    // Velocidad    
     if (!isNaN(velocidad)) {
         var epv = device.endpoints.byAddress("2");
         if (epv != null)
