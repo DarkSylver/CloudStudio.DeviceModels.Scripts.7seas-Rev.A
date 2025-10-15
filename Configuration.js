@@ -23,11 +23,11 @@ function getEndpoints(deviceAddress, endpoints)
   //Tracker
     endpoints.addEndpoint("1", "Localización", endpointType.locationTracker);
     var v = endpoints.addEndpoint("2", "Velocidad", endpointType.genericSensor);
-    v.variableTypeId = 1021;
+    v.variableTypeId = 1028;
     var r = endpoints.addEndpoint("3", "Rumbo", endpointType.genericSensor);
-    r.variableTypeId = 1020;
+    r.variableTypeId = 1030;
     var vm = endpoints.addEndpoint("4", "Variación Magnética", endpointType.genericSensor);
-    vm.variableTypeId = 1022;   
+    vm.variableTypeId = 1031;   
  
 }
 
@@ -73,6 +73,6 @@ function updateEndpointUIRules(endpoint, rules)
   // - Los endpoints no se pueden eliminar.
   // - El subtipo de endpoint se puede cambiar, pero solo para el segundo endpoint.
   
-  // rules.canDelete = false;
+  rules.canDelete = true;
   // rules.canEditSubType = (endpoint.address == "2");
 }
